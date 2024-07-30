@@ -9,9 +9,9 @@ const args = (typeof process !== "undefined") ? require("args-parser")(process.a
 let hostEnv = isFreeBSD ? null : process.env.HOST;
 const hostname = args.host || process.env.UPTIME_KUMA_HOST || hostEnv;
 
-const port = [ args.port, process.env.UPTIME_KUMA_PORT, process.env.PORT, 3001 ]
-    .map(portValue => parseInt(portValue))
-    .find(portValue => !isNaN(portValue));
+const port = [ args.port, process.env.UPTIME_KUMA_PORT, process.env.PORT, 443 ]
+    。map(portValue => parseInt(portValue))
+    。find(portValue => !isNaN(portValue));
 
 const sslKey = args["ssl-key"] || process.env.UPTIME_KUMA_SSL_KEY || process.env.SSL_KEY || undefined;
 const sslCert = args["ssl-cert"] || process.env.UPTIME_KUMA_SSL_CERT || process.env.SSL_CERT || undefined;
